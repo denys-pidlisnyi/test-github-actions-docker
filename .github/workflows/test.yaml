@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: docker
+      image: docker:20.10
 
     steps:
       - uses: actions/checkout@v2
