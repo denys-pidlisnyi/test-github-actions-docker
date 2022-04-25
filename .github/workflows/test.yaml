@@ -12,3 +12,13 @@ jobs:
 
       - name: Docker images
         run: docker image ls
+
+      - name: build project
+        container:
+          image: python:3.9
+          volumes:
+            - .:/srv
+        run: ls -la
+
+      - name: Docker images
+        run: docker image ls
