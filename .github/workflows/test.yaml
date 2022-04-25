@@ -1,0 +1,14 @@
+name: Test cache
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Docker images
+        run: docker image ls
