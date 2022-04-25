@@ -5,7 +5,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: python:3.9
 
     steps:
       - uses: actions/checkout@v2
@@ -13,12 +14,8 @@ jobs:
       - name: Docker images
         run: docker image ls
 
-      - name: build project
-        container:
-          image: python:3.9
-          volumes:
-            - .:/srv
-        run: ls -la
+      - name: My first step
+        uses: docker://alpine:3.8
 
       - name: Docker images
         run: docker image ls
