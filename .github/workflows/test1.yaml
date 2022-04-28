@@ -3,7 +3,7 @@ name: Lil
 on:
   workflow_run:
     workflows: 
-      - "build"
+      - "Test cache"
     types:
       - completed
 
