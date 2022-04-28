@@ -1,0 +1,16 @@
+name: Lil
+
+on:
+  workflow_run:
+    workflows: 
+      - "build"
+    types:
+      - completed
+
+jobs:
+  lol:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test
+        run: echo test
