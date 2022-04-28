@@ -1,21 +1,13 @@
 name: Test cache
 
-on: push
+on:
+  push:
+    paths:
+      - check.yaml
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: docker:20.10
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Docker images
-        run: docker image ls
-
-      - name: My first step
-        uses: docker://alpine:3.7
-
-      - name: Docker images
-        run: docker image ls
