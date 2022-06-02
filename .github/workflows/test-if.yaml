@@ -1,9 +1,6 @@
 name: Test cache
 
-on:
-  push:
-    paths:
-      - check.yaml
+on: [push]
 
 jobs:
   build:
