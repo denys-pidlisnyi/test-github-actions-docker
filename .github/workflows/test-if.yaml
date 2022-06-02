@@ -1,0 +1,24 @@
+name: Test cache
+
+on: 
+  push: {}
+  workflow_dispatch:
+    inputs:
+      environment_name:
+        description: 'Environment name'     
+        required: true
+        type: choice
+        options:
+        - develop
+        - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: echo "${{ toJSON(github) }}"
+      - run: echo "${{ toJSON(inputs) }}"
+      - run: echo "${{ inputs.test }}"
