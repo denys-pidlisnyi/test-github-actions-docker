@@ -1,6 +1,16 @@
 name: Test cache
 
-on: [push]
+on: 
+  push: {}
+  workflow_dispatch:
+    inputs:
+      environment_name:
+        description: 'Environment name'     
+        required: true
+        type: choice
+        options:
+        - develop
+        - staging
 
 jobs:
   build:
