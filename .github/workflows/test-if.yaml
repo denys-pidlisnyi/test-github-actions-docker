@@ -21,3 +21,4 @@ jobs:
 
       - run: echo "${{ toJSON(github) }}"
       - run: echo "${{ toJSON(inputs) }}"
+      - run: echo "${{ inputs.test }}"
